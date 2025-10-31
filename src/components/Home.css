@@ -1,0 +1,77 @@
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover entire container */
+  z-index: -1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  padding: 0 20px; /* padding for small screens */
+}
+
+/* Responsive text */
+.overlay h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* scales between mobile & desktop */
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.overlay p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+/* Tablet adjustments */
+@media screen and (max-width: 991px) {
+  .overlay {
+    padding: 0 15px;
+  }
+
+  .overlay h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .overlay p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 600px) {
+  .overlay {
+    padding: 0 10px;
+  }
+
+  .overlay h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    letter-spacing: 2px;
+  }
+
+  .overlay p {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+    max-width: 90%;
+  }
+}
