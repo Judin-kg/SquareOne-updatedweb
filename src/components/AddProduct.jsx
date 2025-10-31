@@ -257,8 +257,6 @@ const AddProduct = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate();
-
   // ✅ Cloudinary configuration (replace with your credentials)
    const cloudName = "djuihd2af"; 
   const uploadPreset = "rjatlas";
